@@ -9,11 +9,18 @@
 /* Begin PBXBuildFile section */
 		C31B25191AF56C1B00835538 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C31B25181AF56C1B00835538 /* main.m */; };
 		C31B251C1AF56C1B00835538 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C31B251B1AF56C1B00835538 /* AppDelegate.m */; };
-		C31B251F1AF56C1B00835538 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C31B251E1AF56C1B00835538 /* ViewController.m */; };
-		C31B25221AF56C1B00835538 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C31B25201AF56C1B00835538 /* Main.storyboard */; };
+		C31B251F1AF56C1B00835538 /* BuzzMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C31B251E1AF56C1B00835538 /* BuzzMeViewController.m */; };
 		C31B25241AF56C1B00835538 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C31B25231AF56C1B00835538 /* Images.xcassets */; };
 		C31B25271AF56C1B00835538 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C31B25251AF56C1B00835538 /* LaunchScreen.xib */; };
 		C31B25331AF56C1B00835538 /* buzzMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C31B25321AF56C1B00835538 /* buzzMeTests.m */; };
+		C31B253F1AF57BDC00835538 /* buzzMeMainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C31B253E1AF57BDC00835538 /* buzzMeMainStoryboard.storyboard */; };
+		C31B25411AF5836000835538 /* buzzUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C31B25401AF5836000835538 /* buzzUser.m */; };
+		C31B25451AF590F300835538 /* customCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C31B25441AF590F300835538 /* customCell.m */; };
+		C31B254E1AF5B4E500835538 /* STHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C31B254D1AF5B4E500835538 /* STHTTPRequest.m */; };
+		C31B255C1AF5BA8A00835538 /* bee.png in Resources */ = {isa = PBXBuildFile; fileRef = C31B255B1AF5BA8A00835538 /* bee.png */; };
+		C31B25611AF5DD1700835538 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C31B255E1AF5DD1700835538 /* MGSwipeButton.m */; };
+		C31B25621AF5DD1700835538 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C31B25601AF5DD1700835538 /* MGSwipeTableCell.m */; };
+		C31B25641AF5DED700835538 /* replyDirectMessage.png in Resources */ = {isa = PBXBuildFile; fileRef = C31B25631AF5DED700835538 /* replyDirectMessage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +39,26 @@
 		C31B25181AF56C1B00835538 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C31B251A1AF56C1B00835538 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C31B251B1AF56C1B00835538 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C31B251D1AF56C1B00835538 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C31B251E1AF56C1B00835538 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		C31B25211AF56C1B00835538 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C31B251D1AF56C1B00835538 /* BuzzMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuzzMeViewController.h; sourceTree = "<group>"; };
+		C31B251E1AF56C1B00835538 /* BuzzMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuzzMeViewController.m; sourceTree = "<group>"; };
 		C31B25231AF56C1B00835538 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C31B25261AF56C1B00835538 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C31B252C1AF56C1B00835538 /* buzzMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = buzzMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C31B25311AF56C1B00835538 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C31B25321AF56C1B00835538 /* buzzMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = buzzMeTests.m; sourceTree = "<group>"; };
+		C31B253E1AF57BDC00835538 /* buzzMeMainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = buzzMeMainStoryboard.storyboard; sourceTree = "<group>"; };
+		C31B25401AF5836000835538 /* buzzUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = buzzUser.m; sourceTree = "<group>"; };
+		C31B25421AF5836E00835538 /* buzzUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buzzUser.h; sourceTree = "<group>"; };
+		C31B25431AF590E400835538 /* customCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customCell.h; sourceTree = "<group>"; };
+		C31B25441AF590F300835538 /* customCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customCell.m; sourceTree = "<group>"; };
+		C31B254C1AF5B4E500835538 /* STHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STHTTPRequest.h; sourceTree = "<group>"; };
+		C31B254D1AF5B4E500835538 /* STHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STHTTPRequest.m; sourceTree = "<group>"; };
+		C31B255B1AF5BA8A00835538 /* bee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bee.png; sourceTree = "<group>"; };
+		C31B255D1AF5DD1700835538 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
+		C31B255E1AF5DD1700835538 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
+		C31B255F1AF5DD1700835538 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
+		C31B25601AF5DD1700835538 /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
+		C31B25631AF5DED700835538 /* replyDirectMessage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = replyDirectMessage.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +100,23 @@
 		C31B25151AF56C1B00835538 /* buzzMe */ = {
 			isa = PBXGroup;
 			children = (
+				C31B25631AF5DED700835538 /* replyDirectMessage.png */,
+				C31B255D1AF5DD1700835538 /* MGSwipeButton.h */,
+				C31B255E1AF5DD1700835538 /* MGSwipeButton.m */,
+				C31B255F1AF5DD1700835538 /* MGSwipeTableCell.h */,
+				C31B25601AF5DD1700835538 /* MGSwipeTableCell.m */,
+				C31B255B1AF5BA8A00835538 /* bee.png */,
+				C31B254C1AF5B4E500835538 /* STHTTPRequest.h */,
+				C31B254D1AF5B4E500835538 /* STHTTPRequest.m */,
 				C31B251A1AF56C1B00835538 /* AppDelegate.h */,
 				C31B251B1AF56C1B00835538 /* AppDelegate.m */,
-				C31B251D1AF56C1B00835538 /* ViewController.h */,
-				C31B251E1AF56C1B00835538 /* ViewController.m */,
-				C31B25201AF56C1B00835538 /* Main.storyboard */,
+				C31B253E1AF57BDC00835538 /* buzzMeMainStoryboard.storyboard */,
+				C31B251D1AF56C1B00835538 /* BuzzMeViewController.h */,
+				C31B251E1AF56C1B00835538 /* BuzzMeViewController.m */,
+				C31B25421AF5836E00835538 /* buzzUser.h */,
+				C31B25401AF5836000835538 /* buzzUser.m */,
+				C31B25431AF590E400835538 /* customCell.h */,
+				C31B25441AF590F300835538 /* customCell.m */,
 				C31B25231AF56C1B00835538 /* Images.xcassets */,
 				C31B25251AF56C1B00835538 /* LaunchScreen.xib */,
 				C31B25161AF56C1B00835538 /* Supporting Files */,
@@ -199,8 +230,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C31B25221AF56C1B00835538 /* Main.storyboard in Resources */,
 				C31B25271AF56C1B00835538 /* LaunchScreen.xib in Resources */,
+				C31B253F1AF57BDC00835538 /* buzzMeMainStoryboard.storyboard in Resources */,
+				C31B25641AF5DED700835538 /* replyDirectMessage.png in Resources */,
+				C31B255C1AF5BA8A00835538 /* bee.png in Resources */,
 				C31B25241AF56C1B00835538 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,9 +252,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C31B251F1AF56C1B00835538 /* ViewController.m in Sources */,
+				C31B254E1AF5B4E500835538 /* STHTTPRequest.m in Sources */,
+				C31B25621AF5DD1700835538 /* MGSwipeTableCell.m in Sources */,
+				C31B25451AF590F300835538 /* customCell.m in Sources */,
+				C31B25411AF5836000835538 /* buzzUser.m in Sources */,
+				C31B251F1AF56C1B00835538 /* BuzzMeViewController.m in Sources */,
 				C31B251C1AF56C1B00835538 /* AppDelegate.m in Sources */,
 				C31B25191AF56C1B00835538 /* main.m in Sources */,
+				C31B25611AF5DD1700835538 /* MGSwipeButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,14 +282,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C31B25201AF56C1B00835538 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C31B25211AF56C1B00835538 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C31B25251AF56C1B00835538 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -348,6 +378,7 @@
 				INFOPLIST_FILE = buzzMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -358,6 +389,7 @@
 				INFOPLIST_FILE = buzzMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -414,6 +446,7 @@
 				C31B25381AF56C1B00835538 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C31B25391AF56C1B00835538 /* Build configuration list for PBXNativeTarget "buzzMeTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +455,7 @@
 				C31B253B1AF56C1B00835538 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
