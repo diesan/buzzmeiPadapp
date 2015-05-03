@@ -13,7 +13,7 @@
 #import "MGSwipeTableCell.h"
 #import "MGSwipeButton.h"
 
-#define URL_LOGIN @"http://buzzme.herokuapp.com/clients/sign_in"
+#define URL_LOGIN @"http://buzzme.herokuapp.com/clients/sign_in.json"
 #define URL_QUEUE @"http://buzzme.herokuapp.com/queue/post_show.json"
 #define URL_LIST @"http://buzzme.herokuapp.com/clients.json"
 
@@ -204,30 +204,30 @@
 }
 
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//   
-//    @try {
-//        static NSString *CellIdentifier = @"customCell";
-//        customCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//        
-//        if(!cell){
-//            cell = [[customCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-//            // More initializations if needed.
-//        }
-//        
-//        buzzUser *newUser;
-//        newUser = [userList objectAtIndex:indexPath.row];
-//        
-//        cell.lblUsername.text = [NSString stringWithFormat:@"%@", [newUser userName]];
-//        return cell;
-//    }
-//
-//
-//    @catch (NSException *exception) {
-//        NSLog(@"Error when setting the user's information on the table");
-//    }
-//
-//}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+   
+    @try {
+        static NSString *CellIdentifier = @"customCell";
+        customCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        
+        if(!cell){
+            cell = [[customCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            // More initializations if needed.
+        }
+        
+        buzzUser *newUser;
+        newUser = [userList objectAtIndex:indexPath.row];
+        
+        cell.lblUsername.text = [NSString stringWithFormat:@"%@", [newUser userName]];
+        return cell;
+    }
+
+
+    @catch (NSException *exception) {
+        NSLog(@"Error when setting the user's information on the table");
+    }
+
+}
 
 
 
@@ -244,7 +244,7 @@
 
         
         
-        STHTTPRequest *conn = [STHTTPRequest requestWithURLString:URL_QUEUE];
+        STHTTPRequest *conn = [STHTTPRequest requestWithURLString:URL_LOGIN];
         
         
         [conn setHeaderWithName:@"Accept" value:@"application/json"];
@@ -253,11 +253,34 @@
         
         NSString *pass = [passwordTextField text];
         
-  
+        NSLog(@"email %@", [emailTextField text]);
+        NSLog(@"password %@", pass);
         //Email or username are both valid for the user to login
         
-        conn.POSTDictionary = @{ @"os":@"ios" , @"client_id":@"1"};
-        //@"email":[emailTextField text] , @"password":pass
+        //conn.POSTDictionary = @{@"client":@{@"email":[emailTextField text],@"password":[passwordTextField text]}};
+        
+        
+        //conn.POSTDictionary = [NSString stringWithFormat:@"client: %@",@"email: blah@yahoo.com, password: password"] ;
+        NSDictionary *client = @{
+                                 @"email":@"blah@yahoo.com",
+                                 @"password":@"password"
+                                 
+                                 
+                                 };
+        
+        NSDictionary *params = @{
+                                 @"client":client
+                                 
+                                 };
+     
+        NSLog(@"PostDictionary %@", params);
+        conn.POSTDictionary = params;
+        
+        
+        //NSLog(@"PostDictionary Being sent to API %@",@{@"client":@{@"email":[emailTextField text],@"password":[passwordTextField text]}});
+        
+       // NSLog(@"PostDictionary Being sent to API %@",[NSString stringWithFormat:@"{client:{ %@",@"email: blah@yahoo.com, password: password}}"]);
+        
         
         conn.completionBlock = ^(NSDictionary *headers, NSString *body) {
             
@@ -502,59 +525,62 @@
 
 //Swipe functions
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    NSLog(@"Entered cellForRowAtIndexPath");
-    static NSString * reuseIdentifier = @"programmaticCell";
-    NSLog(@"Entered cellForRowAtIndexPath1");
-    MGSwipeTableCell * cell = [self.usersTable dequeueReusableCellWithIdentifier:reuseIdentifier];
-    if (!cell) {
-        NSLog(@"Entered cellForRowAtIndexPath2");
-        cell = [[MGSwipeTableCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
-    }
-
-    
-    buzzUser *brand = [userList objectAtIndex:indexPath.row];
-    NSLog(@"Entered cellForRowAtIndexPath3");
-    cell.rightButtons = @[[MGSwipeButton buttonWithTitle:@"" icon:[UIImage imageNamed:@"replyDirectMessage.png"] backgroundColor:[UIColor blackColor]]];
-    NSLog(@"Entered cellForRowAtIndexPath4");
-    
-    cell.rightButtons = @[[MGSwipeButton buttonWithTitle:@"" icon:[UIImage imageNamed:@"replyDirectMessage.png"] backgroundColor:[UIColor blackColor] callback:^BOOL(MGSwipeTableCell * sender){
-        
-        NSLog(@"Reply Message Button clicked from the SENT view");
-        
-        @try {
-            
-            
-            
-            int idx=(int) indexPath.row;
-            
-            NSLog(@"index %i",idx);
-            
-            buzzUser *tempUser = [userList objectAtIndex:idx];
-            NSLog(@" User  %@ ", [tempUser userName]);
-            
-            tempUsername = [tempUser userName];
-            
-        }
-        
-        
-        @catch (NSException *exception) {
-            NSLog(@"Something went wront \?/");
-        }
-        
-        return YES;
-    }]];
-    
-    cell.rightSwipeSettings.transition = MGSwipeDirectionRightToLeft;
-    
-
-    cell.textLabel.text = [[cell userName]text];
-    
-        return cell;
-    
-}
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    
+//    NSLog(@"Entered cellForRowAtIndexPath");
+//    static NSString * reuseIdentifier = @"programmaticCell";
+//    NSLog(@"Entered cellForRowAtIndexPath1");
+//    MGSwipeTableCell * cell = [self.usersTable dequeueReusableCellWithIdentifier:reuseIdentifier];
+//    if (!cell) {
+//        NSLog(@"Entered cellForRowAtIndexPath2");
+//        cell = [[MGSwipeTableCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
+//    }
+//
+//    
+//    NSLog(@"Entered cellForRowAtIndexPath3");
+//    
+//  
+//    
+//
+////    cell.rightButtons = @[[MGSwipeButton buttonWithTitle:@"" icon:[UIImage imageNamed:@"replyDirectMessage.png"] backgroundColor:[UIColor blackColor]]];
+////    NSLog(@"Entered cellForRowAtIndexPath4");
+//    
+//    cell.rightButtons = @[[MGSwipeButton buttonWithTitle:@"" icon:[UIImage imageNamed:@"replyDirectMessage.png"] backgroundColor:[UIColor blackColor] callback:^BOOL(MGSwipeTableCell * sender){
+//        
+//        NSLog(@"Reply Message Button clicked from the SENT view");
+//        
+//        @try {
+//            
+//            
+//            
+//            int idx=(int) indexPath.row;
+//            
+//            NSLog(@"index %i",idx);
+//            
+//            buzzUser *tempUser = [userList objectAtIndex:idx];
+//            NSLog(@" User  %@ ", [tempUser userName]);
+//            
+//            tempUsername = [tempUser userName];
+//            
+//        }
+//        
+//        
+//        @catch (NSException *exception) {
+//            NSLog(@"Something went wront \?/");
+//        }
+//        
+//        return YES;
+//    }]];
+//    
+//    cell.rightSwipeSettings.transition = MGSwipeDirectionRightToLeft;
+//    
+//
+//    cell.textLabel.text = [[cell userName]text];
+//    
+//        return cell;
+//    
+//}
 
 //Expandable buttons configuration
 -(NSArray*) swipeTableCell:(MGSwipeTableCell*) cell swipeButtonsForDirection:(MGSwipeDirection)direction
